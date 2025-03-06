@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public bool isAlive = true;
 
     public Vector3 direction;
+    public Rigidbody playerRb;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +25,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(direction * Time.deltaTime * speed);
-            //the dot is thre to access a functionality of transform
+        //transform.Translate(direction * Time.deltaTime * speed);
+            //the dot is there to access a functionality of transform
 
-
+        playerRb.linearVelocity = direction * speed;
     }
 
     private void OnMove(InputValue value)
