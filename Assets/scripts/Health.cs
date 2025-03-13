@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
 
     public int points = 5;
     public TMP_Text healthText;
-
+    public EndScreenAnimation gameOverScreen;
     private void Start()
     {
         respawnPosition = transform.position;
@@ -47,6 +47,7 @@ public class Health : MonoBehaviour
 
         if (points < 1)
         {
+            gameOverScreen.StartFade();
             Destroy(gameObject);
 
         }
